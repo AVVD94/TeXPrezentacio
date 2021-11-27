@@ -16,23 +16,23 @@
 \begin{frame}{Csomag célja}
 \begin{itemize}
 
-\item Egy olyan módszert kidolgozni a könnyebb technikai prezentációkra\pause
+\item Egy olyan módszert kidolgozni amivel könnyebb prezentációkat készíteni.\pause
 
 \item Segítse a matematikai formulák szöveggel és grafikák keverésében amire a mai WYSIWYG eszközök nem képesek\pause
 
 \item Hogy kihasználja a \TeX{} platform függetlénségét és így a prezentációk hordozhatóvá válhatnak.\pause
 
-\item Felkínál különféle hátterek használatának szabadságát és lehetőségeit és egyéb díszítéseket amelyeket a felhasználó el tud képzelni hogy legyen a prezentációban
+\item Különféle hátterek használatának szabadsága és egyéb díszítések lehetősége.
 
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Implementálás}
 \begin{enumerate}
-\item Készítsen LATEX dokumentumot a szokásos módon. \pause
-\item A preambulumban töltse be a diacsomagot a paranccsal \color{red}{\verb|\usepackage{pdfslide}|}\color{black} Ezt az utolsó csomagként kell betölteni. Kötelező a hyperref.sty 6.60-as vagy újabb verziója telepítve legyen a rendszerére. \pause
-\item Futtassa a pdfLATEX-et a dokumentumon, és megkapja a pdf kimenetet
-amelyet az Acrobat Readerrel tekinthet meg.
+\item Készítsünk \LaTeX{} dokumentumot a szokásos módon. \pause
+\item A preambulumban töltsük be a diacsomagot a \color{red}{\verb|\usepackage{pdfslide}|}\color{black}paranccsal. Ezt az utolsó csomagként kell betölteni. Kötelező a hyperref.sty 6.60-as vagy újabb verziója telepítve legyen a rendszerére. \pause
+\item Futtassuk a pdfLATEX-et a dokumentumon, így megkapjuk a pdf kimenetet
+amelyet az Acrobat Readerrel tekinthetünk meg.
  
 \end{enumerate}
 \end{frame}
@@ -75,20 +75,23 @@ Specifikusan adja meg ezzel a parancssal
 
 \begin{frame}[fragile]{Hátterek}
 \begin{itemize}
-\item Létrehozhat saját háttérgrafikát a kívánt módon
-csomagokat és a paranccsal meghívhatja őket
-\color{red}\verb|\overlay{<fájlnév>}|\color{black}.
+\item Létrehozhatunk saját háttérgrafikát amit a \color{red}\verb|\overlay{<fájlnév>}|\color{black} paranccsal meghívhatunk meg őket.
 \pause
 
-\item A pdf\TeX{} három grafikus fájlformátumot támogat:\textcolor{red}{\tt pdf, jpeg, png}. Ha vannak \textcolor{red}{\tt eps}-fájlok, desztillálhatja azokat az Acrobat segítségével
-Distiller vagy Ghostscript segítségével konvertálja őket pdf formátumba.
+\item A pdfslide csomag három grafikus fájlformátumot támogat:\textcolor{red}{\tt pdf, jpeg, png}. Az \textcolor{red}{\tt eps} és egyéb nem támogatott fájlokat Ghostscript segítségével konvertálhatjuk pdf formátumba.
 \pause
 
-\item Minden egyes oldalnak egyedi hátteret tervezhet, nincs ilyen téren
+\item Minden egyes oldalnak egyedi hátteret állíthatunk be, nincs ilyen téren
 határ.
 
 
 \end{itemize}
+\end{frame}
+\begin{frame}
+\begin{tabular}{cc}
+\includegraphics[width=5cm]{egyen1} 1 & \includegraphics[width=5cm]{hatter1} 2 \\
+\includegraphics[width=5cm]{hatter2} 3 & \includegraphics[width=5cm]{hatter3} 3 \\ 
+\end{tabular}
 \end{frame}
 
 \begin{frame}[fragile]{Egyenletek bemutatása}
@@ -101,11 +104,11 @@ határ.
 
 \end{frame}
 
-\begin{frame}[fragile]{Extra létesítmények}
+\begin{frame}[fragile]{Egyéb tulajdonságok}
 \large \textbf{Betűtípusok} \\
 \normalsize
-Az összes font attribútumot újra definiáltuk, hogy nagyobbak legyenek a szokásos méretnél.
-Ha azonban vissza akar térni az eredeti mérethez, akkor hozzá kell adnia a real szót a font size parancs előtt, azaz a \color{red}\verb|\normalsize| \color{black}esetén használja a \color{red}\verb|\realnormalsize| \color{black}parancsot; \color{red}\verb|\large| \color{black}pedig ez lesz \color{red}\verb|\reallarge| \color{black}és így tovább.
+A csomag az összes font attribútumot újra definiálja, hogy nagyobbak legyenek a szokásos méretnél.
+Ha azonban vissza akarunk térni az eredeti mérethez, akkor hozzá kell írni a real szót a font size parancs elé, azaz a \color{red}\verb|\normalsize| \color{black}esetén használjuk a \color{red}\verb|\realnormalsize| \color{black}parancsot; \color{red}\verb|\large| \color{black}pedig ez lesz \color{red}\verb|\reallarge| \color{black}és így tovább.
 
 \large \textbf{Címsorok} \\
 \normalsize
